@@ -1,0 +1,281 @@
+@import config
+
+// CUSTOM USER STYLES & IMPORTS
+@font-face
+    font-family: 'Segoe UI Bold'
+    src: url('../fonts/SegoeUI-Bold.eot')
+    src: url('../fonts/SegoeUI-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/SegoeUI-Bold.woff') format('woff'),
+    url('../fonts/SegoeUI-Bold.ttf') format('truetype')
+    font-weight: normal
+    font-style: normal
+
+@font-face
+    font-family: 'Segoe UI Semibold'
+    src: url('../fonts/SegoeUI-SemiBold.eot')
+    src: url('../fonts/SegoeUI-SemiBold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/SegoeUI-SemiBold.woff') format('woff'),
+    url('../fonts/SegoeUI-SemiBold.ttf') format('truetype')
+    font-weight: normal
+    font-style: normal
+
+.container
+    max-width: 1140px
+    width: 100%
+    margin: 0 auto
+    padding: 0 15px
+
+    @media screen and ( max-width: 1200px )
+        max-width: 960px
+
+    @media screen and ( max-width: 992px )
+        max-width: 720px
+
+    @media screen and ( max-width: 768px )
+        max-width: 540px
+
+.new-objects
+    box-sizing: border-box
+    font-family: 'Segoe UI Semibold'
+
+    &__title
+        margin-bottom: 62px
+        text-align: center
+
+    &__columns
+        display: flex
+        justify-content: space-between
+
+    &__column
+        width: 32%
+
+    &__number-item
+        width: 100%
+        height: 100%
+        max-width: 380px
+        max-height: 650px
+        position: relative
+        background-position: center
+        background-image: url('../images/first-column.jpg')
+
+        &::before
+            content: ''
+            background: linear-gradient( 90deg, rgb(102,187,106) 0%, rgb(139,196,142) 100%)
+            opacity: 0.95
+            width: 100%
+            height: 100%
+            left: 0
+            top: 0
+            z-index: 1
+            position: absolute
+
+    &__numbers-info
+        position: relative
+        z-index: 2
+
+    &__numbers
+        font-size: 200px
+        font-family: 'Segoe UI Bold'
+        text-align: right
+        font-weight: 700
+        mix-blend-mode: multiply
+        background-image: url('../images/first-column.jpg')
+        background-position: 50% 0px
+        -webkit-background-clip: text
+        -webkit-text-fill-color: transparent
+
+    &__desc-numbers
+        font-size: 24px
+        max-width: 250px
+        color: #ffffff
+        margin-left: auto
+        margin-right: 24px
+        line-height: 30px
+        top: -50px
+        font-family: 'Segoe UI Semibold'
+        position: relative
+
+    &__all-projects
+        position: absolute
+        z-index: 2
+        margin-top: auto
+        bottom: 45px
+        left: 30px
+
+        &:hover
+            text-decoration: none
+            color: #ffffff
+
+            .new-objects__all-text
+                opacity: 0.85
+                // color: darken(#fff, 10%)
+
+            .new-objects__all-wrap
+                opacity: 0.85
+
+    &__all-wrap
+        width: 45px
+        height: 45px
+        display: inline-block
+        transition: all 0.2s
+
+        svg
+            width: 100%
+            height: 100%
+
+    &__all-text
+        color: #ffffff
+        text-decoration: underline
+        margin-left: 20px
+        font-size: 20px
+        transition: all 0.2s
+
+    &__item
+        position: relative
+        overflow: hidden
+
+        &:first-child
+            margin-bottom: 28px
+
+    &__info
+        position: absolute
+        bottom: 40px
+        left: 40px
+
+    &__name
+        font-size: 24px
+        line-height: 26px
+        margin-bottom: 12px
+        color: #ffffff
+
+    &__link
+        font-size: 18px
+        text-decoration: underline
+        color: #8abb7f
+        transition: all 0.2s
+
+        &:hover
+            color: #8abb7f
+            opacity: 0.85
+
+    &__bg-img
+        object-fit: contain
+
+    &__s-item
+        &:first-child
+            height: 380px
+
+        &:last-child
+            height: 241px
+
+    &__t-item
+        &:first-child
+            height: 241px
+
+        &:last-child
+            height: 380px
+
+    @media screen and ( max-width: 1200px )
+        &__numbers
+            font-size: 170px
+
+        &__s-item
+            &:first-child
+                height: 340px
+
+        &__t-item
+
+            &:last-child
+                height: 340px
+
+        &__all-wrap
+            svg
+                width: 40px
+                height: 40px
+
+        &__all-text
+            margin-left: 10px
+
+        &__all-projects
+            left: 14px
+
+        &__info
+            left: 20px
+            bottom: 30px
+
+    @media screen and ( max-width: 992px )
+        &__s-item
+            &:first-child
+                height: 280px
+
+        &__t-item
+            &:last-child
+                height: 280px
+
+        &__numbers
+            font-size: 130px
+
+        &__numbers-info
+            top: 60px
+
+        &__desc-numbers
+            font-size: 18px
+            line-height: 22px
+            margin-left: 20px
+            margin-right: 16px
+            top: -20px
+
+        &__name
+            font-size: 18px
+
+        &__all-wrap
+            display: block
+
+        &__all-projects
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            left: 0
+            width: 100%
+
+        &__all-text
+            font-size: 18px
+            text-align: center
+            display: block
+            width: 100%
+
+        &__info
+            bottom: 14px
+
+        &__name
+            margin-bottom: 4px
+
+    @media screen and ( max-width: 768px )
+        &__columns
+            flex-direction: column-reverse
+            justify-content: center
+            align-items: center
+
+        &__column
+            width: 100%
+            max-width: 380px
+
+        &__item
+            margin-bottom: 28px
+
+        &__number-item
+            height: 528px
+
+        &__numbers
+            font-size: 210px
+
+        &__numbers-info
+            top: 0
+
+        &__all-wrap
+            display: none
+
+    @media screen and ( max-width: 350px )
+        &__numbers
+            font-size: 180px
